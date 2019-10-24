@@ -12,7 +12,7 @@ def index():
 def addition():
     value1=request.args.get('A',default = 0, type = Fraction)
     value2=request.args.get('B',default = 0, type = Fraction)
-    result = value1 + value2
+    result = value1 - value2
     C = str(result).split('/')
     if len(C)==2:
 	D = float(C[0])/float(C[1])
