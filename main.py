@@ -9,7 +9,7 @@ def index():
 
 
 @app.route('/add', methods=['GET','POST'])#GET and POST are a list of HTTP methods GET means we retrieve the elements and POST means to add an element
-def addition():
+def subtraction():
     value1=request.args.get('A',default = 0, type = Fraction)
     value2=request.args.get('B',default = 0, type = Fraction)
     result = value1 - value2
