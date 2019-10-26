@@ -62,7 +62,7 @@ class TestCalculator(unittest.TestCase):#unittest odule provides a set of tools 
 		self.assertEqual(b'0 \n', solution.data)
 		#when one input is alphabet and other input be any number, whether rational , integer, fraction ultimately the result will be the input which was an integer
 
-	d#ef test_mul10(self):
+	#def test_mul10(self):
 
 		#case 10, when A input is of the form p/q where q=0 and B input be any number
 		#solution = self.app.get('mul?A=1/0&B=2')
