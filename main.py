@@ -9,6 +9,7 @@ def index():
 
 
 
+
 @app.route('/sub', methods=['GET','POST'])#GET and POST are a list of HTTP methods GET means we retrieve the elements and POST means to add an element
 def subtraction():
     value1=request.args.get('A',default = 0, type = Fraction)
@@ -20,6 +21,13 @@ def multiplication():
     value1=request.args.get('A',default = 0, type = Fraction)
     value2=request.args.get('B',default = 0, type = Fraction)
     result = value1 * value2
+
+
+@app.route('/div', methods=['GET','POST'])#GET and POST are a list of HTTP methods GET means we retrieve the elements and POST means to add an element
+def division():
+    value1=request.args.get('A',default = 0, type = Fraction)
+    value2=request.args.get('B',default = 0, type = Fraction)
+    result = value1 / value2
 
     C = str(result).split('/')
     if len(C)==2:
