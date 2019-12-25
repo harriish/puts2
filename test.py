@@ -62,18 +62,18 @@ class TestCalculator(unittest.TestCase):#unittest module provides a set of tools
 		self.assertEqual(b'22 \n', solution.data)
 		#when one input is alphabet and other input be any number, whether rational , integer, fraction ultimately the result will be the input which was an integer
 
-	#def test_add10(self):
+	def test_add10(self):
 
 		#case 10, when A input is of the form p/q where q=0 and B input be any number
-		#solution = self.app.get('add?A=1/0&B=2')
-		#self.assertEqual(b"A input denominator should not be a zero \n", solution.data)
-		#according to the script if q=0 in p/q form then it should display an error
+		solution = self.app.get('add?A=1/0&B=2')
+		self.assertEqual(b"A input denominator should not be a zero \n", solution.data)
+		#according to the script if q=0 in p/q form then it should display an error but it is resolved using zerodivision module 
 
-	#def test_add11(self):
+	def test_add11(self):
 
 		#case 11, when A input is any number and B=p/q form where q=0
-		#solution = self.app.get('add?A=12&B=2/0')
-		#self.assertEqual(b"B input denominator should not be a zero \n", solution.data)
+		solution = self.app.get('add?A=12&B=2/0')
+		self.assertEqual(b"B input denominator should not be a zero \n", solution.data)
 
 	def test_sub1(self):
 		#case 1, A is n integer B is an integer
@@ -129,18 +129,18 @@ class TestCalculator(unittest.TestCase):#unittest module provides a set of tools
 		self.assertEqual(b'22 \n', solution.data)
 		#when one input is alphabet and other input be any number, whether rational , integer, fraction ultimately the result will be the input which was an integer
 
-	#def test_sub10(self):
+	def test_sub10(self):
 
 		#case 10, when A input is of the form p/q where q=0 and B input be any number
-		#solution = self.app.get('sub?A=1/0&B=2')
-		#self.assertEqual(b"A input denominator should not be a zero \n", solution.data)
+		solution = self.app.get('sub?A=1/0&B=2')
+		self.assertEqual(b"A input denominator should not be a zero \n", solution.data)
 		#according to the script if q=0 in p/q form then it should display an error
 
-	#def test_sub11(self):
+	def test_sub11(self):
 
 		#case 11, when A input is any number and B=p/q form where q=0
-		#solution = self.app.get('sub?A=12&B=2/0')
-		#self.assertEqual(b"B input denominator should not be a zero \n", solution.data)
+		solution = self.app.get('sub?A=12&B=2/0')
+		self.assertEqual(b"B input denominator should not be a zero \n", solution.data)
 	def test_mul1(self):
 		#case 1, A is n integer B is an integer
 		solution = self.app.get('/mul?A=20&B=2')
@@ -195,18 +195,18 @@ class TestCalculator(unittest.TestCase):#unittest module provides a set of tools
 		self.assertEqual(b'0 \n', solution.data)
 		#when one input is alphabet and other input be any number, whether rational , integer, fraction ultimately the result will be the input which was an integer
 
-	#def test_mul10(self):
+	def test_mul10(self):
 
 		#case 10, when A input is of the form p/q where q=0 and B input be any number
-		#solution = self.app.get('mul?A=1/0&B=2')
-		#self.assertEqual(b"A input denominator should not be a zero \n", solution.data)
-		#according to the script if q=0 in p/q form then it should display an error
+		solution = self.app.get('mul?A=1/0&B=2')
+		self.assertEqual(b"A input denominator should not be a zero \n", solution.data)
+		#according to the script if q=0 in p/q form then it should display an error but it is resolved using zerodivision module
 
-	#def test_mul11(self):
+	def test_mul11(self):
 
 		#case 11, when A input is any number and B=p/q form where q=0
-		#solution = self.app.get('mul?A=12&B=2/0')
-		#self.assertEqual(b"B input denominator should not be a zero \n", solution.data)
+		solution = self.app.get('mul?A=12&B=2/0')
+		self.assertEqual(b"B input denominator should not be a zero \n", solution.data)
 
 	def test_div1(self):
 		#case 1, A is n integer B is an integer
@@ -255,25 +255,25 @@ class TestCalculator(unittest.TestCase):#unittest module provides a set of tools
 		solution = self.app.get('/div?A=harish&B=12')
 		self.assertEqual(b'0 \n', solution.data)#non integer type considered as not valid , in this case which is zero
 
-	#def test_div9(self):
+	def test_div9(self):
 
 		#case 9, when A input is an integer and B input is an alphabet
-		#solution = self.app.get('/div?A=22&B=kumar')
-		#self.assertEqual(b'0 \n', solution.data)
+		solution = self.app.get('/div?A=22&B=kumar')
+		self.assertEqual(b'0 \n', solution.data)
 		#when one input is alphabet and other input be any number, whether rational , integer, fraction ultimately the result will be the input which was an integer
 
-	#def test_div10(self):
+	def test_div10(self):
 
 		#case 10, when A input is of the form p/q where q=0 and B input be any number
-		#solution = self.app.get('div?A=1/0&B=2')
-		#self.assertEqual(b"A input denominator should not be a zero \n", solution.data)
+		solution = self.app.get('div?A=1/0&B=2')
+		self.assertEqual(b"A input denominator should not be a zero \n", solution.data)
 		#according to the script if q=0 in p/q form then it should display an error
 
-	#def test_div11(self):
+	def test_div11(self):
 
 		#case 11, when A input is any number and B=p/q form where q=0
-		#solution = self.app.get('div?A=12&B=2/0')
-		#self.assertEqual(b"B input denominator should not be a zero \n", solution.data)
+		solution = self.app.get('div?A=12&B=2/0')
+		self.assertEqual(b"B input denominator should not be a zero \n", solution.data)
 
 
 if __name__ == '__main__':
