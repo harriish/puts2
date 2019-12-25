@@ -77,7 +77,7 @@ def division():
         C = Fraction(value1)
         D = Fraction(value2)
         try:
-            result = x/y
+            result = C/D
             return(str(round(float(result),3)))
         except ZeroDivisionError as error:
             return 'None'
