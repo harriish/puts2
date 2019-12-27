@@ -4,6 +4,10 @@ import main
 
 class TestCalculator(unittest.TestCase):#unittest module provides a set of tools for constructing and running scripts, we will test features of online calculator in this case
 	
+	def setUp(self):#setUp , when unittest module is used and it enables application to test
+		main.app.testing = True
+		self.app = main.app.test_client()
+
 	def test_div1(self):
 		#case 1, A is n integer B is an integer
 		solution = self.app.get('/div?A=20&B=2')
