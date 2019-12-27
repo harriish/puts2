@@ -8,22 +8,23 @@ def index():
     return 'Usage;\n<Operation>?A=<Value1>&B=<Value2>\n'
 
 
-@app.route('/sub', methods=['GET','POST'])#GET and POST are a list of HTTP methods GET means we retrieve the elements and POST means to add an element
+@app.route('/sub')
 def subtraction():
-    value1=request.args.get('A',default = 0, type = Fraction)
-    value2=request.args.get('B',default = 0, type = Fraction)
-    result = value1 - value2
-    C = str(result).split('/')
-    if len(C)==2:
-	D = float(C[0])/float(C[1])
-	E = str(D).split(".")
-	if E[1] == '0':
-		return " %s\n" % E[0]
-	else:
-		return " %s\n" %D
+    try:
+        value1=request.args.get('A',default = 0, type = Fraction)
+    except ZeroDivisionError as error:
+        value1='None'
+    try:
+        value2=request.args.get('B',default = 0, type = Fraction)
+    except ZeroDivisionError as error:
+        value2='None'
+    if value1 == 'None' or value2 == 'None' :
+        return 'None'
     else:
-	F = str(result).split(".")
-	return "%s \n" % F[0]
+        C = Fraction(value1)
+        D = Fraction(value2)
+        result = C-D
+        return(str(round(float(result),3)))
 
 
 if __name__ == "__main__":
