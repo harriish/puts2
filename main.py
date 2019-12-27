@@ -22,7 +22,7 @@ def addition():
         C = Fraction(value1)
         D = Fraction(value2)
         result = C+D
-        return str(round(float(result),3))
+        return str(round(float(result),3))#round function
 
 @app.route('/sub')
 def subtraction():
