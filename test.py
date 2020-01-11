@@ -47,7 +47,7 @@ class TestCalculator(unittest.TestCase):#unittest odule provides a set of tools 
 
 		#case 7, when A is an integer and B is a fraction p/q
 		solution = self.app.get('/mul?A=23&B=9/13')
-		self.assertEqual(b'15.923', solution.data)
+		self.assertEqual(b'15.9230769231', solution.data)
 
 	def test_mul8(self):
 
