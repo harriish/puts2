@@ -22,7 +22,7 @@ def addition():
         C = Fraction(value1)
         D = Fraction(value2)
         result = C+D
-        return str(round(float(result),3))#round function
+        return str(float(result))
 
 @app.route('/sub')
 def subtraction():
@@ -40,7 +40,7 @@ def subtraction():
         C = Fraction(value1)
         D = Fraction(value2)
         result = C-D
-        return(str(round(float(result),3)))
+        return str(float(result))
 
 
 @app.route('/mul')
@@ -59,7 +59,7 @@ def multiplication():
         C = Fraction(value1)
         D = Fraction(value2)
         result = C*D
-        return(str(round(float(result),3)))
+        return str(float(result))
 
 @app.route('/div')
 def division():
@@ -78,7 +78,7 @@ def division():
         D = Fraction(value2)
         try:
             result = C/D
-            return(str(round(float(result),3)))
+            return str(float(result))
         except ZeroDivisionError as error:
             return 'None'
 
