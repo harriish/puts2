@@ -25,7 +25,7 @@ def division():
         D = Fraction(value2)
         try:
             result = C/D
-            return(str(round(float(result),3)))
+            return str(float(result))
         except ZeroDivisionError as error:
             return 'None'
 
