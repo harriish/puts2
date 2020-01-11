@@ -22,7 +22,7 @@ def addition():
         C = Fraction(value1)
         D = Fraction(value2)
         result = C+D
-        return str(round(float(result),3))
+        return str(float(result))#removed round function and results in float
 
 
 if __name__ == "__main__":
