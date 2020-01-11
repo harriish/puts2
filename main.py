@@ -25,7 +25,7 @@ def subtraction():
         C = Fraction(value1)
         D = Fraction(value2)
         result = C-D
-        return(str(round(float(result),3)))
+        return str(float(result))
 
 
 if __name__ == "__main__":
